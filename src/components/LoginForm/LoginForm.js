@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Input, Label } from '../Form/Form';
 import AuthApiService from '../../services/auth-api-service';
-import UserContext from '../../contexts/UserContext';
+// import UserContext from '../../contexts/UserContext';
 import styles from './LoginForm.module.scss';
 import LoadingDots from '../LoadingDots/LoadingDots';
 import cx from 'classnames';

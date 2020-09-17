@@ -1,5 +1,10 @@
 import React, {Component} from 'react';
-import Dashboard from '../Dashboard/Dashboard'
+import Dashboard from '../Dashboard/Dashboard';
+import { Route, Switch } from 'react-router-dom';
+import PrivateRoute from '../PrivateRoute/PrivateRoute';
+import PublicOnlyRoute from '../PublicOnlyRoute';
+import LoginForm from '../LoginForm/LoginForm';
+import RegistrationForm from '../RegistrationForm/RegistrationForm';
 
 export default class App extends Component {
   state = { hasError: false };
@@ -11,7 +16,12 @@ export default class App extends Component {
   render() {
     return (
     <div className="App">
-      <Dashboard></Dashboard>
+      <Route />
+      <main>
+        <PublicOnlyRoute exact path={'/'} component={Dashboard} />
+        <PublicOnlyRoute exact path={'/login'} component={LoginForm} />
+        <PublicOnlyRoute exact path={'/register'} component={RegistrationForm} />
+      </main>
     </div>
     )};
 }
