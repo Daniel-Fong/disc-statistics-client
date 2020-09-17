@@ -1,12 +1,17 @@
-import React from 'react';
+import React, {Component} from 'react';
 import Dashboard from '../Dashboard/Dashboard'
 
-function App() {
-  return (
+export default class App extends Component {
+  state = { hasError: false };
+
+  static getDerivedStateFromError(error) {
+    console.error(error);
+    return { hasError: true };
+  }
+  render() {
+    return (
     <div className="App">
       <Dashboard></Dashboard>
     </div>
-  );
+    )};
 }
-
-export default App;
