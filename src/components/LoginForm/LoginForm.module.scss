@@ -1,0 +1,141 @@
+@import '../../styles/_variables';
+@import '../../styles/_breakpoints';
+
+.LoginForm {
+  border: 2px solid var(--black);
+  width: 80%;
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 0 1.5rem 1.5rem;
+  background-color: white;
+  opacity: 1;
+}
+
+@include mobilePortrait {
+  .loginHeader {
+    margin-top: 1.5rem;
+  }
+  .LoginForm {
+    padding: 0.5rem 2rem 2.5rem;
+    width: 70%;
+  }
+}
+
+.LoginForm Input {
+  outline: 1px solid rgba(68, 68, 68, 0.1);
+}
+
+@include mobileLandscape {
+  .LoginForm Input {
+    outline: none;
+  }
+}
+
+.guestLogin {
+  margin-top: 1.5rem;
+  font-size: 0.8rem;
+  opacity: 0.8;
+}
+
+.loginHeader {
+  font-size: 1.5rem;
+  color: var(--black);
+  margin: 1.5rem auto;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.loginLabel {
+  margin-bottom: 0.5rem;
+}
+
+.loginInput {
+  margin-bottom: 0rem;
+  width: 150px;
+}
+
+.loginButton {
+  text-align: center;
+  padding: 0rem 1rem;
+  border: 2px solid var(--black);
+  transition: background-color 0.2s;
+  width: 120px;
+  height: 45px;
+  margin-top: 0.5rem;
+  &:hover, &focus {
+    cursor: pointer;
+    background-color: var(--neutral);
+  }
+}
+
+.notLoggingIn {
+  transition: background-color 1s;
+  background-color: var(--bright);
+  &:hover, &focus {
+    background-color: var(--neutral);
+  }
+}
+
+.isLoggingIn {
+  transition: background-color 1s;
+  background-color: var(--post-background);
+  &:hover, &focus {
+    background-color: var(--post-background);
+  }
+}
+
+.buttonText {
+  font-family: Nunito;
+  font-weight: 600;
+  font-size: 1rem;
+  color: var(--black);
+}
+
+.userNameDiv,
+.passwordDiv {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.passwordDiv {
+  margin-bottom: 2rem;
+}
+
+.errorMessage {
+  position: relative;
+  color: var(--warning);
+  font-weight: bold;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-top: 1rem;
+  width: 100%;
+}
+
+@include mobilePortrait {
+  .errorMessage {
+    position: absolute;
+    margin-top: 0;
+  }
+
+  .loginHeader {
+    margin-top: 2.5rem;
+    margin: 1.5rem auto;
+    margin-bottom: 1.5rem;
+  }
+  .loginInput {
+    margin-bottom: 0.5rem;
+  }
+  .buttonText {
+    font-weight: 600;
+    font-size: 1.2rem;
+  }
+  .loginButton {
+    padding: 1rem 2rem;
+    width: 120px;
+    height: 60px;
+    margin-top: 0rem;
+    margin-bottom: 0rem;
+  }
+}
