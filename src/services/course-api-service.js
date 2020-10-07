@@ -15,8 +15,11 @@ const CourseApiService = {
             !res.ok ? res.json().then((e) => Promise.reject(e)) : res.json()
         );
     },
-    getCourses() {
-        return fetch()
+    getCourses(sessionId) {
+        return fetch('http://api.pdga.com/services/json/course', {
+            method: 'GET',
+            headers: `Cookie: session_name=${sessionId}`,
+        })
     }
 }
 
