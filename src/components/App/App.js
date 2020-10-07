@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import Dashboard from '../Dashboard/Dashboard';
+import DashboardRoute from '../../routes/DashboardRoute/DashboardRoute';
 import { Route, Switch } from 'react-router-dom';
 import PrivateRoute from '../PrivateRoute/PrivateRoute';
 import PublicOnlyRoute from '../PublicOnlyRoute/PublicOnlyRoute';
@@ -18,7 +18,7 @@ export default class App extends Component {
     <div className="App">
       <Route />
       <main>
-        <PublicOnlyRoute exact path={'/'} component={Dashboard} />
+        <PublicOnlyRoute exact path={'/'} component={DashboardRoute} />
         <PublicOnlyRoute exact path={'/login'} component={LoginForm} />
         <PublicOnlyRoute exact path={'/register'} component={RegistrationForm} />
       </main>
