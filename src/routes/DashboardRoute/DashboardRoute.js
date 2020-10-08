@@ -9,12 +9,18 @@ export class DashboardRoute extends Component {
     };
 
     componentDidMount() {
-        this.startSession();
+        // this.startSession();
+        this.searchCourses();
     }
 
     async startSession() {
         const response = await CourseApiService.loginToSession();
         console.log(response);
+    }
+
+    async searchCourses() {
+        const courses = await CourseApiService.getCourses();
+        console.log(courses)
     }
 
     render() {
