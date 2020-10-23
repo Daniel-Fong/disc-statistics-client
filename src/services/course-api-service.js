@@ -3,19 +3,27 @@ import TokenService from './token-service';
 
 const CourseApiService = {
     loginToSession() {
-        return fetch(`${config.proxyUrl}https://api.pdga.com/services/json/user/login`, {
+        return fetch(`${config.API_ENDPOINT}/pdga/login`, {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',
-                "X-Requested-With": "XMLHttpRequest"
-            },
-            body: {
-                "username":"Daniel Fong 146610","password":"iWXjpfDQt5!deE@"
             },
         }).then((res) =>
             !res.ok ? res.json().then((e) => Promise.reject(e)) : res.json()
         );
     },
+
+    logoutOfSession() {
+        return fetch(`${config.API_ENDPOINT}/pdga/logout`, {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json',
+            },
+        }).then((res) =>
+        !res.ok ? res.json().then((e) => Promise.reject(e)) : res.json()
+        ); 
+    },
+
     getCourses(sessionId) {
         return fetch(`${config.proxyUrl}http://api.pdga.com/services/json/course?postal_code=90815`, {
             method: 'GET',
