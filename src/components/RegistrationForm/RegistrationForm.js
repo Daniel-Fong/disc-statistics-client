@@ -195,7 +195,7 @@ class RegistrationForm extends Component {
           <div className={styles.regDiv}>
             <Label htmlFor="registration-zip-input" className={styles.regLabel}>
               <span className={styles.fullInputPhrase}>Enter your</span>{' '}
-              zipcode:
+              zipcode (optional):
               <Required />
             </Label>
             <Input
