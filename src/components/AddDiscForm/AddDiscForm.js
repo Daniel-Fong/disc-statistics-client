@@ -232,6 +232,66 @@ class AddDiscForm extends Component {
                 <option value='VeryUnder'>Very Understable</option>
               </select>
             </div>
+            <div className={styles.addDiscDiv}>
+              <Label
+                htmlFor="disc-primary-color-select"
+                className={styles.addDiscLabel}>
+                <span className={styles.fullInputPhrase}>Select disc</span> primary color:
+                <Required />
+              </Label>
+              <select
+                id="disc-primary-color-select"
+                name="primary-color"
+                className={styles.addDiscSelect}
+              >
+                <option value='Red'>Red</option>
+                <option value='Orange'>Orange</option>
+                <option value='Yellow'>Yellow</option>
+                <option value='Green'>Green</option>
+                <option value='Teal'>Teal</option>
+                <option value='Blue'>Blue</option>
+                <option value='Purple'>Purple</option>
+                <option value='Pink'>Pink</option>
+                <option value='White'>White</option>
+                <option value='Black'>Black</option>
+                <option value='Blue'>Brown</option>
+                <option value='Blue'>Grey</option>
+              </select>
+            </div>
+            <div className={styles.uploadContainer}>
+              <button
+                className={styles.uploadButton}
+                onClick={e => this.beginUpload(e)}>
+                <span className={styles.uploadText}>Upload Disc Photo</span>
+              </button>
+              {this.displayPreview()}
+            </div>
+            <div className={styles.addDiscDiv}>
+              <Label
+                htmlFor="disc-secondary-color-select"
+                className={styles.addDiscLabel}>
+                <span className={styles.fullInputPhrase}>Select disc</span> secondary color:
+                <Required />
+              </Label>
+              <select
+                id="disc-secondary-color-select"
+                name="secondary-color"
+                className={styles.addDiscSelect}
+              >
+                <option value='Red'>Red</option>
+                <option value='Orange'>Orange</option>
+                <option value='Yellow'>Yellow</option>
+                <option value='Green'>Green</option>
+                <option value='Teal'>Teal</option>
+                <option value='Blue'>Blue</option>
+                <option value='Purple'>Purple</option>
+                <option value='Pink'>Pink</option>
+                <option value='White'>White</option>
+                <option value='Black'>Black</option>
+                <option value='Blue'>Brown</option>
+                <option value='Blue'>Grey</option>
+              </select>
+            </div>
             <div className={styles.uploadContainer}>
               <button
                 className={styles.uploadButton}
