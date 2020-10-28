@@ -182,13 +182,12 @@ class AddDiscForm extends Component {
               <Label
                 htmlFor="disc-type-select"
                 className={styles.addDiscLabel}>
-                <span className={styles.fullInputPhrase}>Enter disc</span> mold:
+                <span className={styles.fullInputPhrase}>Select disc</span> type:
                 <Required />
               </Label>
               <select
                 id="disc-type-select"
                 name="type"
-                placeholder="Wraith"
                 className={styles.addDiscSelect}
               >
                 <option value='Putter'>Putter</option>
@@ -213,6 +212,25 @@ class AddDiscForm extends Component {
                 required
                 autoComplete="off"
               />
+            </div>
+            <div className={styles.addDiscDiv}>
+              <Label
+                htmlFor="disc-stability-select"
+                className={styles.addDiscLabel}>
+                <span className={styles.fullInputPhrase}>Select disc</span> stability:
+                <Required />
+              </Label>
+              <select
+                id="disc-stability-select"
+                name="stability"
+                className={styles.addDiscSelect}
+              >
+                <option value='Stable'>Stable</option>
+                <option value='Over'>Overstable</option>
+                <option value='Under'>Understable</option>
+                <option value='VeryOver'>Very Overstable</option>
+                <option value='VeryUnder'>Very Understable</option>
+              </select>
             </div>
             <div className={styles.uploadContainer}>
               <button
