@@ -98,10 +98,6 @@ class AddDiscForm extends Component {
         });
     };
   
-    componentDidMount() {
-      this.firstInput.current.focus();
-    }
-  
     render() {
       const { error } = this.state;
       return (
@@ -110,93 +106,110 @@ class AddDiscForm extends Component {
             this.setState({ isRegistering: true });
             this.handleSubmit(e);
           }}
-          className={styles.RegForm}
+          className={styles.AddDiscForm}
           autoComplete="off">
           <div role="alert">{error ? <p>{error}</p> : null}</div>
-          <h2 className={styles.regHeader}>Sign Up</h2>
+          <h2 className={styles.addDiscHeader}>Sign Up</h2>
           <div className={styles.inputContainer}>
-            <div className={styles.regDiv}>
+            <div className={styles.addDiscDiv}>
               <Label
-                htmlFor="registration-name-input"
-                className={styles.regLabel}>
-                <span className={styles.fullInputPhrase}>Enter your</span> name:
+                htmlFor="disc-name-input"
+                className={styles.addDiscLabel}>
+                <span className={styles.fullInputPhrase}>Enter disc</span> name:
                 <Required />
               </Label>
               <Input
                 ref={this.firstInput}
-                id="registration-name-input"
-                name="name"
-                placeholder="John Smith"
+                id="disc-name-input"
+                name="disc-name"
+                placeholder="Beat in Star Wraith"
                 className={styles.regInput}
+                required
+                maxLength="30"
+                autoComplete="off"
+              />
+            </div>
+            <div className={styles.addDiscDiv}>
+              <Label
+                htmlFor="disc-brand-input"
+                className={styles.addDiscLabel}>
+                <span className={styles.fullInputPhrase}>Select a</span> brand:
+                <Required />
+              </Label>
+              <Input
+                id="disc-brand-input"
+                name="brand"
+                placeholder="Innova"
+                className={styles.addDiscInput}
                 required
                 maxLength="20"
                 autoComplete="off"
               />
             </div>
-            <div className={styles.regDiv}>
+            <div className={styles.addDiscDiv}>
               <Label
-                htmlFor="registration-username-input"
-                className={styles.regLabel}>
-                <span className={styles.fullInputPhrase}>Create a</span> username:
+                htmlFor="disc-mold-input"
+                className={styles.addDiscLabel}>
+                <span className={styles.fullInputPhrase}>Enter disc</span> mold:
                 <Required />
               </Label>
               <Input
-                id="registration-username-input"
-                name="username"
-                placeholder="Morty123"
-                className={styles.regInput}
-                required
-                maxLength="20"
-                autoComplete="off"
-              />
-            </div>
-            <div className={styles.regDiv}>
-              <Label
-                htmlFor="registration-email-input"
-                className={styles.regLabel}>
-                <span className={styles.fullInputPhrase}>Enter your</span> email:
-                <Required />
-              </Label>
-              <Input
-                id="registration-email-input"
-                name="email"
-                type="email"
-                placeholder="email@domain.com"
-                className={styles.regInput}
+                id="disc-mold-input"
+                name="mold"
+                placeholder="Wraith"
+                className={styles.addDiscInput}
                 required
                 autoComplete="off"
               />
             </div>
-            <div className={styles.regDiv}>
+            <div className={styles.addDiscDiv}>
               <Label
-                htmlFor="registration-password-input"
-                className={styles.regLabel}>
-                <span className={styles.fullInputPhrase}>Choose a</span> password:
+                htmlFor="disc-mold-input"
+                className={styles.addDiscLabel}>
+                <span className={styles.fullInputPhrase}>Enter disc</span> mold:
                 <Required />
               </Label>
               <Input
-                id="registration-password-input"
-                name="password"
-                title="Password must be at least 8 characters long with 1 number and 1 special character"
-                type="password"
-                placeholder="8dsfah$!fdas"
-                className={styles.regInput}
+                id="disc-mold-input"
+                name="mold"
+                placeholder="Wraith"
+                className={styles.addDiscInput}
                 required
                 autoComplete="off"
               />
             </div>
-            <div className={styles.regDiv}>
-              <Label htmlFor="registration-zip-input" className={styles.regLabel}>
-                <span className={styles.fullInputPhrase}>Enter your</span>{' '}
-                zipcode (optional):
+            <div className={styles.addDiscDiv}>
+              <Label
+                htmlFor="disc-type-select"
+                className={styles.addDiscLabel}>
+                <span className={styles.fullInputPhrase}>Enter disc</span> mold:
+                <Required />
+              </Label>
+              <select
+                id="disc-type-select"
+                name="type"
+                placeholder="Wraith"
+                className={styles.addDiscSelect}
+              >
+                <option value='Putter'>Putter</option>
+                <option value='Midrange'>Midrange</option>
+                <option value='Fairway'>Fairway Driver</option>
+                <option value='Control'>Control Driver</option>
+                <option value='Distance'>Distance Driver</option>
+              </select>
+            </div>
+            <div className={styles.addDiscDiv}>
+              <Label
+                htmlFor="disc-plastic-input"
+                className={styles.addDiscLabel}>
+                <span className={styles.fullInputPhrase}>Enter disc</span> plastic:
                 <Required />
               </Label>
               <Input
-                id="registration-zip-input"
-                name="zip"
-                placeholder="00999"
-                type="number"
-                className={styles.regInput}
+                id="disc-plastic-input"
+                name="plastic"
+                placeholder="Star"
+                className={styles.addDiscInput}
                 required
                 autoComplete="off"
               />
@@ -205,33 +218,19 @@ class AddDiscForm extends Component {
               <button
                 className={styles.uploadButton}
                 onClick={e => this.beginUpload(e)}>
-                <span className={styles.uploadText}>Upload Avatar</span>
+                <span className={styles.uploadText}>Upload Disc Photo</span>
               </button>
               {this.displayPreview()}
             </div>
           </div>
           <footer className="reg-footer">
-            <button
+            <button>
               type="submit"
-              className={cx(
-                styles.registrationButton,
-                this.state.isRegistering
-                  ? styles.isRegistering
-                  : styles.notRegistering
-              )}>
-              {this.state.isRegistering ? (
-                <LoadingDots />
-              ) : (
                 <span className="buttonText">Submit</span>
-              )}
             </button>{' '}
           </footer>
-          <Link to="/login" className={styles.regLink}>
-            Already have an account?
-          </Link>
         </form>
       );
     }
-  }
   
 export default AddDiscForm;
