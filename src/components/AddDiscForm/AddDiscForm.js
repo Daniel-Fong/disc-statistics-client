@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { Input, Required, Label } from '../Form/Form';
-import AuthApiService from '../../services/auth-api-service';
+import DiscApiService from '../../services/disc-api-service';
 import cx from 'classnames';
 import styles from './AddDiscForm.scss';
 
@@ -76,7 +76,7 @@ class AddDiscForm extends Component {
     //     img_alt = 'Default Profile';
       }
   
-      DiscApiService.postDisc({
+      DiscApiService.addDisc({
         // name: name.value,
         // username: username.value,
         // password: password.value,
@@ -254,8 +254,8 @@ class AddDiscForm extends Component {
                 <option value='Pink'>Pink</option>
                 <option value='White'>White</option>
                 <option value='Black'>Black</option>
-                <option value='Blue'>Brown</option>
-                <option value='Blue'>Grey</option>
+                <option value='Brown'>Brown</option>
+                <option value='Grey'>Grey</option>
               </select>
             </div>
             <div className={styles.uploadContainer}>
@@ -278,6 +278,7 @@ class AddDiscForm extends Component {
                 name="secondary-color"
                 className={styles.addDiscSelect}
               >
+                <option value='None' default>None</option>
                 <option value='Red'>Red</option>
                 <option value='Orange'>Orange</option>
                 <option value='Yellow'>Yellow</option>
@@ -288,8 +289,36 @@ class AddDiscForm extends Component {
                 <option value='Pink'>Pink</option>
                 <option value='White'>White</option>
                 <option value='Black'>Black</option>
-                <option value='Blue'>Brown</option>
-                <option value='Blue'>Grey</option>
+                <option value='Brown'>Brown</option>
+                <option value='Grey'>Grey</option>
+              </select>
+            </div>
+            <div className={styles.addDiscDiv}>
+              <Label
+                htmlFor="disc-speed-select"
+                className={styles.addDiscLabel}>
+                <span className={styles.fullInputPhrase}>Select disc</span> speed:
+                <Required />
+              </Label>
+              <select
+                id="disc-speed-select"
+                name="secondary-color"
+                className={styles.addDiscSelect}
+              >
+                <option value='1' default>1</option>
+                <option value='2'>2</option>
+                <option value='3'>3</option>
+                <option value='4'>4</option>
+                <option value='5'>5</option>
+                <option value='6'>6</option>
+                <option value='7'>7</option>
+                <option value='8'>8</option>
+                <option value='9'>9</option>
+                <option value='10'>10</option>
+                <option value='11'>11</option>
+                <option value='12'>12</option>
+                <option value='13'>13</option>
+                <option value='14'>14</option>
               </select>
             </div>
             <div className={styles.uploadContainer}>
