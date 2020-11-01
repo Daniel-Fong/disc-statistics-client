@@ -121,7 +121,7 @@ class AddDiscForm extends Component {
               <Input
                 ref={this.firstInput}
                 id="disc-name-input"
-                name="disc-name"
+                name="disc-name-input"
                 placeholder="Beat in Star Wraith"
                 className={styles.regInput}
                 required
@@ -138,7 +138,7 @@ class AddDiscForm extends Component {
               </Label>
               <Input
                 id="disc-brand-input"
-                name="brand"
+                name="disc-brand-input"
                 placeholder="Innova"
                 className={styles.addDiscInput}
                 required
@@ -155,7 +155,7 @@ class AddDiscForm extends Component {
               </Label>
               <Input
                 id="disc-mold-input"
-                name="mold"
+                name="disc-mold-input"
                 placeholder="Wraith"
                 className={styles.addDiscInput}
                 required
@@ -171,7 +171,7 @@ class AddDiscForm extends Component {
               </Label>
               <Input
                 id="disc-mold-input"
-                name="mold"
+                name="disc-mold-input"
                 placeholder="Wraith"
                 className={styles.addDiscInput}
                 required
@@ -187,7 +187,7 @@ class AddDiscForm extends Component {
               </Label>
               <select
                 id="disc-type-select"
-                name="type"
+                name="disc-type-select"
                 className={styles.addDiscSelect}
               >
                 <option value='Putter'>Putter</option>
@@ -206,7 +206,7 @@ class AddDiscForm extends Component {
               </Label>
               <Input
                 id="disc-plastic-input"
-                name="plastic"
+                name="disc-plastic-input"
                 placeholder="Star"
                 className={styles.addDiscInput}
                 required
@@ -222,7 +222,7 @@ class AddDiscForm extends Component {
               </Label>
               <select
                 id="disc-stability-select"
-                name="stability"
+                name="disc-stability-select"
                 className={styles.addDiscSelect}
               >
                 <option value='Stable'>Stable</option>
@@ -241,7 +241,7 @@ class AddDiscForm extends Component {
               </Label>
               <select
                 id="disc-primary-color-select"
-                name="primary-color"
+                name="disc-primary-color-select"
                 className={styles.addDiscSelect}
               >
                 <option value='Red'>Red</option>
@@ -275,7 +275,7 @@ class AddDiscForm extends Component {
               </Label>
               <select
                 id="disc-secondary-color-select"
-                name="secondary-color"
+                name="disc-secondary-color-select"
                 className={styles.addDiscSelect}
               >
                 <option value='None' default>None</option>
@@ -291,6 +291,83 @@ class AddDiscForm extends Component {
                 <option value='Black'>Black</option>
                 <option value='Brown'>Brown</option>
                 <option value='Grey'>Grey</option>
+              </select>
+            </div>
+            <div className={styles.addDiscDiv}>
+              <Label
+                htmlFor="disc-speed-select"
+                className={styles.addDiscLabel}>
+                <span className={styles.fullInputPhrase}>Select disc</span> speed:
+                <Required />
+              </Label>
+              <select
+                id="disc-speed-select"
+                name="disc-speed-select"
+                className={styles.addDiscSelect}
+              >
+                <option value='1' default>1</option>
+                <option value='2'>2</option>
+                <option value='3'>3</option>
+                <option value='4'>4</option>
+                <option value='5'>5</option>
+                <option value='6'>6</option>
+                <option value='7'>7</option>
+                <option value='8'>8</option>
+                <option value='9'>9</option>
+                <option value='10'>10</option>
+                <option value='11'>11</option>
+                <option value='12'>12</option>
+                <option value='13'>13</option>
+                <option value='14'>14</option>
+              </select>
+            </div>
+            <div className={styles.addDiscDiv}>
+              <Label
+                htmlFor="disc-glide-select"
+                className={styles.addDiscLabel}>
+                <span className={styles.fullInputPhrase}>Select disc</span> glide:
+                <Required />
+              </Label>
+              <select
+                id="disc-glide-select"
+                name="disc-glide-select"
+                className={styles.addDiscSelect}
+              >
+                <option value='1' default>1</option>
+                <option value='2'>2</option>
+                <option value='3'>3</option>
+                <option value='4'>4</option>
+                <option value='5'>5</option>
+                <option value='6'>6</option>
+                <option value='7'>7</option>
+              </select>
+            </div>
+            <div className={styles.addDiscDiv}>
+              <Label
+                htmlFor="disc-speed-select"
+                className={styles.addDiscLabel}>
+                <span className={styles.fullInputPhrase}>Select disc</span> speed:
+                <Required />
+              </Label>
+              <select
+                id="disc-speed-select"
+                name="secondary-color"
+                className={styles.addDiscSelect}
+              >
+                <option value='1' default>1</option>
+                <option value='2'>2</option>
+                <option value='3'>3</option>
+                <option value='4'>4</option>
+                <option value='5'>5</option>
+                <option value='6'>6</option>
+                <option value='7'>7</option>
+                <option value='8'>8</option>
+                <option value='9'>9</option>
+                <option value='10'>10</option>
+                <option value='11'>11</option>
+                <option value='12'>12</option>
+                <option value='13'>13</option>
+                <option value='14'>14</option>
               </select>
             </div>
             <div className={styles.addDiscDiv}>
