@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import RegistrationForm from '../../components/RegistrationForm/RegistrationForm';
 import styles from './RegistrationRoute.module.scss';
-import WelcomeDisplay from '../../components/WelcomeDisplay/WelcomeDisplay';
+// import WelcomeDisplay from '../../components/WelcomeDisplay/WelcomeDisplay';
 
 class RegistrationRoute extends Component {
   static defaultProps = {
@@ -30,7 +30,7 @@ class RegistrationRoute extends Component {
     return (
       <section className={styles.registrationSection}>
         <div className={styles.registrationContainer}>
-          <WelcomeDisplay />
+          {/* <WelcomeDisplay /> */}
           <RegistrationForm
             onRegistrationSuccess={this.handleRegistrationSuccess} onLoginSuccess={this.handleLoginSuccess}
           />
