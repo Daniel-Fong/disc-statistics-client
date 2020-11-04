@@ -193,6 +193,22 @@ class RegistrationForm extends Component {
             />
           </div>
           <div className={styles.regDiv}>
+            <Label
+              htmlFor="registration-handedness-input"
+              className={styles.regLabel}>
+              <span className={styles.fullInputPhrase}>Select throwing</span> hand:
+              <Required />
+            </Label>
+            <select
+              id="registration-username-input"
+              name="username"
+              required
+            >
+                <option default value='R'>Right</option>
+                <option value='L'>Left</option>
+            </select>
+          </div>
+          <div className={styles.regDiv}>
             <Label htmlFor="registration-zip-input" className={styles.regLabel}>
               <span className={styles.fullInputPhrase}>Enter your</span>{' '}
               zipcode (optional):

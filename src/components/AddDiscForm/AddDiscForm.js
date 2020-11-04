@@ -60,7 +60,7 @@ class AddDiscForm extends Component {
       return image;
     }
   
-    handleSubmit = e => {
+    // handleSubmit = e => {
     //   e.preventDefault();
     //   const { name, username, password, zip, email } = e.target;
   
@@ -74,9 +74,9 @@ class AddDiscForm extends Component {
     //     img_src =
     //       'https://res.cloudinary.com/mmpr/image/upload/v1588908186/user_knxeok.png';
     //     img_alt = 'Default Profile';
-      }
+      // }
   
-      DiscApiService.addDisc({
+      // DiscApiService.addDisc({
         // name: name.value,
         // username: username.value,
         // password: password.value,
@@ -84,19 +84,19 @@ class AddDiscForm extends Component {
         // email: email.value,
         // img_src,
         // img_alt
-      })
-        .then(disc => {
+      // })
+        // .then(disc => {
         //   name.value = '';
         //   username.value = '';
         //   password.value = '';
         //   zip.value = '';
         //   email.value = '';
         //   this.props.onRegistrationSuccess();
-        })
-        .catch(res => {
-          this.setState({ error: res.error });
-        });
-    };
+        // })
+        // .catch(res => {
+        //   this.setState({ error: res.error });
+        // });
+    // };
   
     render() {
       const { error } = this.state;
