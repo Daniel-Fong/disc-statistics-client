@@ -3,8 +3,9 @@ import DashboardRoute from '../../routes/DashboardRoute/DashboardRoute';
 import { Route, Switch } from 'react-router-dom';
 import PrivateRoute from '../PrivateRoute/PrivateRoute';
 import PublicOnlyRoute from '../PublicOnlyRoute/PublicOnlyRoute';
-import LoginForm from '../LoginForm/LoginForm';
-import RegistrationForm from '../RegistrationForm/RegistrationForm';
+import RegistrationRoute from '../../routes/RegistrationRoute/RegistrationRoute';
+import AddDiscForm from '../AddDiscForm/AddDiscForm';
+import LoginRoute from '../../routes/LoginRoute/LoginRoute';
 
 export default class App extends Component {
   state = { hasError: false };
@@ -19,9 +20,9 @@ export default class App extends Component {
       <Route />
       <main>
         <PublicOnlyRoute exact path={'/'} component={DashboardRoute} />
-        <PublicOnlyRoute exact path={'/login'} component={LoginForm} />
-        <PublicOnlyRoute exact path={'/register'} component={RegistrationForm} />
-        <PublicOnlyRoute exact path={'/addDisc'} component={RegistrationForm} />
+        <PublicOnlyRoute exact path={'/login'} component={LoginRoute} />
+        <PublicOnlyRoute exact path={'/register'} component={RegistrationRoute} />
+        <PublicOnlyRoute exact path={'/addDisc'} component={AddDiscForm} />
       </main>
     </div>
     )};
