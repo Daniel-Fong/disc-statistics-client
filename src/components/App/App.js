@@ -21,6 +21,7 @@ export default class App extends Component {
         <PublicOnlyRoute exact path={'/'} component={DashboardRoute} />
         <PublicOnlyRoute exact path={'/login'} component={LoginForm} />
         <PublicOnlyRoute exact path={'/register'} component={RegistrationForm} />
+        <PublicOnlyRoute exact path={'/addDisc'} component={RegistrationForm} />
       </main>
     </div>
     )};
