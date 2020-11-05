@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import LoginForm from '../../components/LoginForm/LoginForm';
 import styles from './LoginRoute.module.scss';
-import WelcomeDisplay from '../../components/WelcomeDisplay/WelcomeDisplay';
+// import WelcomeDisplay from '../../components/WelcomeDisplay/WelcomeDisplay';
 
 class LoginRoute extends Component {
   static defaultProps = {
@@ -25,7 +25,7 @@ class LoginRoute extends Component {
     return (
       <section className={styles.loginSection}>
         <div className={styles.loginContainer}>
-          <WelcomeDisplay />
+          {/* <WelcomeDisplay /> */}
           <LoginForm onLoginSuccess={this.handleLoginSuccess} />
         </div>
       </section>

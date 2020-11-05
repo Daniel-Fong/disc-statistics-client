@@ -13,29 +13,29 @@ class AddDiscForm extends Component {
   
     firstInput = React.createRef();
   
-    beginUpload = e => {
-      e.preventDefault();
+    // beginUpload = e => {
+    //   e.preventDefault();
   
-      const uploadOptions = {
-        cloudName: 'mmpr',
-        uploadPreset: 'upload',
-        resourceType: 'image',
-        multiple: false,
-        theme: 'minimal',
-        maxImageFileSize: 1500000 //1.5MB
-      };
+    //   const uploadOptions = {
+    //     cloudName: 'mmpr',
+    //     uploadPreset: 'upload',
+    //     resourceType: 'image',
+    //     multiple: false,
+    //     theme: 'minimal',
+    //     maxImageFileSize: 1500000 //1.5MB
+    //   };
   
-      openUploadWidget(uploadOptions, (error, photos) => {
-        if (!error) {
-          if (photos.event === 'success') {
-            this.setState({
-              imgSrc: photos.info.secure_url
-            });
-          }
-        } else {
-        }
-      });
-    };
+    //   openUploadWidget(uploadOptions, (error, photos) => {
+    //     if (!error) {
+    //       if (photos.event === 'success') {
+    //         this.setState({
+    //           imgSrc: photos.info.secure_url
+    //         });
+    //       }
+    //     } else {
+    //     }
+    //   });
+    // };
   
     displayPreview() {
       let image;
@@ -96,7 +96,7 @@ class AddDiscForm extends Component {
         // .catch(res => {
         //   this.setState({ error: res.error });
         // });
-    // };
+    //  };
   
     render() {
       const { error } = this.state;
@@ -400,5 +400,5 @@ class AddDiscForm extends Component {
         </form>
       );
     }
-  
+  }
 export default AddDiscForm;
