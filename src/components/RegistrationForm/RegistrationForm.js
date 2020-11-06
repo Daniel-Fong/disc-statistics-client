@@ -69,7 +69,7 @@ class RegistrationForm extends Component {
 
   handleSubmit = e => {
     e.preventDefault();
-    const { name, username, password, zip, email } = e.target;
+    const { name, username, password, zip, email, hand } = e.target;
 
     let img_src = '';
     let img_alt = '';
@@ -89,6 +89,7 @@ class RegistrationForm extends Component {
       password: password.value,
       zip: zip.value,
       email: email.value,
+      hand: hand.value,
       img_src,
       img_alt
     })
@@ -98,6 +99,7 @@ class RegistrationForm extends Component {
         password.value = '';
         zip.value = '';
         email.value = '';
+        hand.value = '';
         this.props.onRegistrationSuccess();
       })
       .catch(res => {
@@ -200,8 +202,8 @@ class RegistrationForm extends Component {
               <Required />
             </Label>
             <select
-              id="registration-username-input"
-              name="username"
+              id="registration-handedness-input"
+              name="hand"
               required
             >
                 <option default value='R'>Right</option>
