@@ -8,7 +8,9 @@ import { CloudinaryContext } from "cloudinary-react";
 
 ReactDOM.render(
   <BrowserRouter>
-    <App />
+    <UserProvider>
+      <App />
+    </UserProvider>
   </BrowserRouter>,
   document.getElementById('root')
 );

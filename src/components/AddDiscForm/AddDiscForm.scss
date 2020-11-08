@@ -1,0 +1,155 @@
+@import '../../styles/_variables';
+@import '../../styles/_breakpoints';
+
+.addDiscForm {
+  border: 2px solid var(--black);
+  width: 80%;
+  max-width: 400px;
+  margin: 0 auto 4rem;
+  padding: 0 1.5rem 2rem;
+  background-color: white;
+  opacity: 1;
+}
+
+@include mobilePortrait {
+  .RegForm {
+    padding: 0.5rem 1.5rem 1rem;
+    width: 70%;
+    max-width: 450px;
+  }
+}
+
+.regHeader {
+  font-size: 1.5rem;
+  color: var(--black);
+  margin: 1.5rem auto;
+}
+
+@include mobilePortrait {
+  .regHeader {
+    margin-bottom: 2rem;
+  }
+}
+
+.addDiscLabel,
+.addDiscInput {
+  margin-bottom: 0.5rem;
+}
+
+.addDiscInput {
+  width: 175px;
+}
+
+.addDiscLabel {
+  font-size: 0.9rem;
+  margin: 0 auto 0.3rem;
+}
+
+.addDiscDiv {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0.5rem;
+}
+
+.addDiscDiv:last-of-type {
+  margin-bottom: 2rem;
+}
+
+.registrationButton {
+  text-align: center;
+  margin-bottom: 2rem;
+  padding: 1rem 2rem;
+  border: 2px solid var(--black);
+  transition: background-color 0.2s;
+  width: 150px;
+  height: 60px;
+  &:hover, &focus {
+    cursor: pointer;
+    background-color: var(--neutral);
+  }
+}
+
+.notRegistering {
+  transition: background-color 1s;
+  background-color: var(--bright);
+  &:hover, &focus {
+    background-color: var(--neutral);
+  }
+}
+
+.isRegistering {
+  transition: background-color 1s;
+  background-color: var(--post-background);
+  &:hover, &focus {
+    background-color: var(--post-background);
+  }
+}
+
+@include mobileLandscape {
+  .addDiscLabel {
+    font-size: 1rem;
+  }
+
+  .addDiscDiv {
+    flex-direction: row;
+    margin: 0 2rem 1rem 0;
+    justify-content: flex-end;
+  }
+}
+
+.fullInputPhrase {
+  display: none;
+}
+
+@include mobileLandscape {
+  .fullInputPhrase {
+    display: inline;
+  }
+}
+
+.inputContainer {
+  padding: 0;
+  margin-bottom: 1.5rem;
+}
+
+.regLink {
+  transition: color 0.2s;
+  &:hover, &focus {
+    color: var(--dark1);
+  }
+}
+
+.defaultImage,
+.uploadedImage {
+  width: 50px;
+  height: 50px;
+  margin-left: 1.2rem;
+}
+
+.uploadedImage {
+  border-radius: 50%;
+}
+
+.uploadContainer {
+  margin: 2rem auto 2.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.uploadText {
+  font-size: 1rem;
+}
+
+.uploadButton {
+  padding-bottom: 2px;
+  border: none;
+  border-bottom: 2px solid var(--black);
+  transition: all 0.2s;
+  &:hover, &focus {
+    cursor: pointer;
+    color: var(--dark1);
+  }
+}

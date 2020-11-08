@@ -106,7 +106,7 @@ class AddDiscForm extends Component {
             this.setState({ isRegistering: true });
             this.handleSubmit(e);
           }}
-          className={styles.AddDiscForm}
+          className={styles.addDiscForm}
           autoComplete="off">
           <div role="alert">{error ? <p>{error}</p> : null}</div>
           <h2 className={styles.addDiscHeader}>Sign Up</h2>
@@ -123,7 +123,7 @@ class AddDiscForm extends Component {
                 id="disc-name-input"
                 name="disc-name-input"
                 placeholder="Beat in Star Wraith"
-                className={styles.regInput}
+                className={styles.addDiscInput}
                 required
                 maxLength="30"
                 autoComplete="off"
@@ -133,7 +133,7 @@ class AddDiscForm extends Component {
               <Label
                 htmlFor="disc-brand-input"
                 className={styles.addDiscLabel}>
-                <span className={styles.fullInputPhrase}>Select a</span> brand:
+                <span className={styles.fullInputPhrase}>Enter disc</span> brand:
                 <Required />
               </Label>
               <Input
@@ -143,22 +143,6 @@ class AddDiscForm extends Component {
                 className={styles.addDiscInput}
                 required
                 maxLength="20"
-                autoComplete="off"
-              />
-            </div>
-            <div className={styles.addDiscDiv}>
-              <Label
-                htmlFor="disc-mold-input"
-                className={styles.addDiscLabel}>
-                <span className={styles.fullInputPhrase}>Enter disc</span> mold:
-                <Required />
-              </Label>
-              <Input
-                id="disc-mold-input"
-                name="disc-mold-input"
-                placeholder="Wraith"
-                className={styles.addDiscInput}
-                required
                 autoComplete="off"
               />
             </div>
@@ -258,14 +242,6 @@ class AddDiscForm extends Component {
                 <option value='Grey'>Grey</option>
               </select>
             </div>
-            <div className={styles.uploadContainer}>
-              <button
-                className={styles.uploadButton}
-                onClick={e => this.beginUpload(e)}>
-                <span className={styles.uploadText}>Upload Disc Photo</span>
-              </button>
-              {this.displayPreview()}
-            </div>
             <div className={styles.addDiscDiv}>
               <Label
                 htmlFor="disc-secondary-color-select"
@@ -292,6 +268,14 @@ class AddDiscForm extends Component {
                 <option value='Brown'>Brown</option>
                 <option value='Grey'>Grey</option>
               </select>
+            </div>
+            <div className={styles.uploadContainer}>
+              <button
+                className={styles.uploadButton}
+                onClick={e => this.beginUpload(e)}>
+                <span className={styles.uploadText}>Upload Disc Photo</span>
+              </button>
+              {this.displayPreview()}
             </div>
             <div className={styles.addDiscDiv}>
               <Label

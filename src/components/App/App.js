@@ -19,10 +19,13 @@ export default class App extends Component {
     <div className="App">
       <Route />
       <main>
-        <PublicOnlyRoute exact path={'/'} component={DashboardRoute} />
-        <PublicOnlyRoute exact path={'/login'} component={LoginRoute} />
-        <PublicOnlyRoute exact path={'/register'} component={RegistrationRoute} />
-        <PublicOnlyRoute exact path={'/addDisc'} component={AddDiscForm} />
+        {hasError && <p>There was an error! Oh no!</p>}
+        <Switch>
+          <PrivatesRoute exact path={'/addDisc'} component={AddDiscForm} /> 
+          <PrivateRoute exact path={'/'} component={DashboardRoute} />
+          <PublicOnlyRoute exact path={'/login'} component={LoginRoute} />
+          <PublicOnlyRoute exact path={'/register'} component={RegistrationRoute} />
+        </Switch>
       </main>
     </div>
     )};
