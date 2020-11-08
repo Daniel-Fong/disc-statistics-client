@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import AddDiscForm from '../../components/AddDiscForm/AddDiscForm';
+import Header from '../../components/Header/Header'
 
 export class AddDiscRoute extends Component {
 
@@ -14,6 +15,7 @@ export class AddDiscRoute extends Component {
     render() {
         return (
             <div>
+                <Header/>
                 <AddDiscForm />
             </div>
         );

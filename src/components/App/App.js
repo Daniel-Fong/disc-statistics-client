@@ -4,7 +4,7 @@ import { Route, Switch } from 'react-router-dom';
 import PrivateRoute from '../PrivateRoute/PrivateRoute';
 import PublicOnlyRoute from '../PublicOnlyRoute/PublicOnlyRoute';
 import RegistrationRoute from '../../routes/RegistrationRoute/RegistrationRoute';
-import AddDiscForm from '../AddDiscForm/AddDiscForm';
+import AddDiscRoute from '../../routes/AddDiscRoute/AddDiscRoute';
 import LoginRoute from '../../routes/LoginRoute/LoginRoute';
 
 export default class App extends Component {
@@ -22,7 +22,7 @@ export default class App extends Component {
       <main>
         {hasError && <p>There was an error! Oh no!</p>}
         <Switch>
-          <PrivateRoute exact path={'/addDisc'} component={AddDiscForm} /> 
+          <PrivateRoute exact path={'/addDisc'} component={AddDiscRoute} /> 
           <PrivateRoute exact path={'/'} component={DashboardRoute} />
           <PublicOnlyRoute exact path={'/login'} component={LoginRoute} />
           <PublicOnlyRoute exact path={'/register'} component={RegistrationRoute} />

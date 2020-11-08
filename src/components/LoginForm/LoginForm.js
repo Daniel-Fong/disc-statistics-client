@@ -120,6 +120,9 @@ class LoginForm extends Component {
             <p className={cx(styles.guestLogin)}>
               For guest login use default credentials
             </p>
+            <button >
+
+            </button>
           </form>
         )}
       </>

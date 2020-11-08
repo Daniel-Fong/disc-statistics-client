@@ -47,6 +47,9 @@ class Header extends Component {
           <Link className={styles.directoryLink} to="/">
             Directory
           </Link>
+          <Link className={styles.addDiscLink} to="/addDisc">
+            Add Disc
+          </Link>
           <img
             className={styles.avatarImg}
             src={user.img_src}
