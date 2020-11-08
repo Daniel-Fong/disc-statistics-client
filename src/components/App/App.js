@@ -15,13 +15,14 @@ export default class App extends Component {
     return { hasError: true };
   }
   render() {
+    const {hasError} = this.state;
     return (
     <div className="App">
       <Route />
       <main>
         {hasError && <p>There was an error! Oh no!</p>}
         <Switch>
-          <PrivatesRoute exact path={'/addDisc'} component={AddDiscForm} /> 
+          <PrivateRoute exact path={'/addDisc'} component={AddDiscForm} /> 
           <PrivateRoute exact path={'/'} component={DashboardRoute} />
           <PublicOnlyRoute exact path={'/login'} component={LoginRoute} />
           <PublicOnlyRoute exact path={'/register'} component={RegistrationRoute} />
