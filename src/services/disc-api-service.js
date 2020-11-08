@@ -1,15 +1,17 @@
 import config from '../config';
+import TokenService from '../services/token-service';
 
 const DiscApiService = {
     addDisc(disc) {
         return fetch(`${config.API_ENDPOINT}/discs`, {
             method: 'POST',
             headers: {
+                Authorization: `Bearer ${TokenService.getAuthToken()}`,
                 'content-type': 'application/json',
             },
-            body: {
-
-            }
+            body: JSON.stringify({
+                disc,
+            }),
         }).then((res) =>
             !res.ok ? res.json().then((e) => Promise.reject(e)) : res.json()
         );
