@@ -47,9 +47,6 @@ class Header extends Component {
           <Link className={styles.directoryLink} to="/">
             Directory
           </Link>
-          <Link className={styles.directoryLinkIcon} to="/neighbor-directory">
-            <img src={require('../../images/users.svg')} alt="users icon" />
-          </Link>
           <img
             className={styles.avatarImg}
             src={user.img_src}
