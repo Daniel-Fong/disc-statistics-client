@@ -60,43 +60,56 @@ class AddDiscForm extends Component {
       return image;
     }
   
-    // handleSubmit = e => {
-    //   e.preventDefault();
-    //   const { name, username, password, zip, email } = e.target;
+    handleSubmit = e => {
+      e.preventDefault();
+      const { name, brand, mold, type, plastic, stability, primaryColor, secondaryColor, speed, glide, turn, fade } = e.target;
   
-    //   let img_src = '';
-    //   let img_alt = '';
+      let img_src = '';
+      let img_alt = '';
   
-    //   if (this.state.imgSrc) {
-    //     img_src = this.state.imgSrc;
-    //     img_alt = `${username.value} Profile Picture`;
-    //   } else if (!this.state.imgSrc) {
-    //     img_src =
-    //       'https://res.cloudinary.com/mmpr/image/upload/v1588908186/user_knxeok.png';
-    //     img_alt = 'Default Profile';
-      // }
+      if (this.state.imgSrc) {
+        img_src = this.state.imgSrc;
+        img_alt = `${username.value} Profile Picture`;
+      } else if (!this.state.imgSrc) {
+        img_src =
+          'https://res.cloudinary.com/mmpr/image/upload/v1588908186/user_knxeok.png';
+        img_alt = 'Default Profile';
+      }
   
-      // DiscApiService.addDisc({
-        // name: name.value,
-        // username: username.value,
-        // password: password.value,
-        // zip: zip.value,
-        // email: email.value,
-        // img_src,
-        // img_alt
-      // })
-        // .then(disc => {
-        //   name.value = '';
-        //   username.value = '';
-        //   password.value = '';
-        //   zip.value = '';
-        //   email.value = '';
-        //   this.props.onRegistrationSuccess();
-        // })
-        // .catch(res => {
-        //   this.setState({ error: res.error });
-        // });
-    //  };
+      DiscApiService.addDisc({
+        name: name.value,
+        brand: brand.value,
+        mold: mold.value,
+        type: type.value,
+        plastic: plastic.value,
+        stability: stability.value,
+        primaryColor: primaryColor.value,
+        secondaryColor: secondaryColor.value,
+        speed: speed.value,
+        glide: glide.value,
+        turn: turn.value,
+        fade: fade.value,
+        img_src,
+        img_alt
+      })
+        .then(disc => {
+          name.value = '';
+          brand.value = '';
+          mold.value = '';
+          type.value = '';
+          plastic.value = '';
+          stability.value = '';
+          primaryColor.value = '';
+          secondaryColor.value = '';
+          speed.value = '';
+          glide.value = '';
+          turn.value = '';
+          fade.value = '';
+        })
+        .catch(res => {
+          this.setState({ error: res.error });
+        });
+     };
   
     render() {
       const { error } = this.state;
@@ -121,7 +134,7 @@ class AddDiscForm extends Component {
               <Input
                 ref={this.firstInput}
                 id="disc-name-input"
-                name="disc-name-input"
+                name="name"
                 placeholder="Beat in Star Wraith"
                 className={styles.addDiscInput}
                 required
@@ -138,7 +151,7 @@ class AddDiscForm extends Component {
               </Label>
               <Input
                 id="disc-brand-input"
-                name="disc-brand-input"
+                name="brand"
                 placeholder="Innova"
                 className={styles.addDiscInput}
                 required
@@ -155,7 +168,7 @@ class AddDiscForm extends Component {
               </Label>
               <Input
                 id="disc-mold-input"
-                name="disc-mold-input"
+                name="mold"
                 placeholder="Wraith"
                 className={styles.addDiscInput}
                 required
@@ -171,7 +184,7 @@ class AddDiscForm extends Component {
               </Label>
               <select
                 id="disc-type-select"
-                name="disc-type-select"
+                name="type"
                 className={styles.addDiscSelect}
               >
                 <option value='Putter'>Putter</option>
@@ -190,7 +203,7 @@ class AddDiscForm extends Component {
               </Label>
               <Input
                 id="disc-plastic-input"
-                name="disc-plastic-input"
+                name="plastic"
                 placeholder="Star"
                 className={styles.addDiscInput}
                 required
@@ -206,7 +219,7 @@ class AddDiscForm extends Component {
               </Label>
               <select
                 id="disc-stability-select"
-                name="disc-stability-select"
+                name="stability"
                 className={styles.addDiscSelect}
               >
                 <option value='Stable'>Stable</option>
@@ -218,14 +231,14 @@ class AddDiscForm extends Component {
             </div>
             <div className={styles.addDiscDiv}>
               <Label
-                htmlFor="disc-primary-color-select"
+                htmlFor="disc-primaryColor-select"
                 className={styles.addDiscLabel}>
                 <span className={styles.fullInputPhrase}>Select disc</span> primary color:
                 <Required />
               </Label>
               <select
-                id="disc-primary-color-select"
-                name="disc-primary-color-select"
+                id="disc-primaryColor-select"
+                name="primaryColor"
                 className={styles.addDiscSelect}
               >
                 <option value='Red'>Red</option>
@@ -244,14 +257,14 @@ class AddDiscForm extends Component {
             </div>
             <div className={styles.addDiscDiv}>
               <Label
-                htmlFor="disc-secondary-color-select"
+                htmlFor="disc-secondaryColor-select"
                 className={styles.addDiscLabel}>
                 <span className={styles.fullInputPhrase}>Select disc</span> secondary color:
                 <Required />
               </Label>
               <select
-                id="disc-secondary-color-select"
-                name="disc-secondary-color-select"
+                id="disc-secondaryColor-select"
+                name="secondaryColor"
                 className={styles.addDiscSelect}
               >
                 <option value='None' default>None</option>
@@ -286,7 +299,7 @@ class AddDiscForm extends Component {
               </Label>
               <select
                 id="disc-speed-select"
-                name="disc-speed-select"
+                name="speed"
                 className={styles.addDiscSelect}
               >
                 <option value='1' default>1</option>
@@ -314,7 +327,7 @@ class AddDiscForm extends Component {
               </Label>
               <select
                 id="disc-glide-select"
-                name="disc-glide-select"
+                name="glide"
                 className={styles.addDiscSelect}
               >
                 <option value='1' default>1</option>
@@ -335,7 +348,7 @@ class AddDiscForm extends Component {
               </Label>
               <select
                 id="disc-turn-select"
-                name="disc-turn-select"
+                name="turn"
                 className={styles.addDiscSelect}
               >
                 <option value='1' default>1</option>
@@ -355,7 +368,7 @@ class AddDiscForm extends Component {
               </Label>
               <select
                 id="disc-fade-select"
-                name="disc-fade-select"
+                name="fade"
                 className={styles.addDiscSelect}
               >
                 <option value='0' default>0</option>
