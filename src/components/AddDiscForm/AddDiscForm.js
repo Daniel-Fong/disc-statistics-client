@@ -187,7 +187,8 @@ class AddDiscForm extends Component {
                 name="type"
                 className={styles.addDiscSelect}
               >
-                <option value='Putter'>Putter</option>
+                <option value='Putter' default>Putter</option>
+                <option value='Approach'>Approach</option>s
                 <option value='Midrange'>Midrange</option>
                 <option value='Fairway'>Fairway Driver</option>
                 <option value='Control'>Control Driver</option>
