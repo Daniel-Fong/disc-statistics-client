@@ -379,6 +379,24 @@ class AddDiscForm extends Component {
                 <option value='5'>5</option>
               </select>
             </div>
+            <div className={styles.addDiscDiv}>
+              <Label
+                className={styles.addCommentLabel}
+                htmlFor="disc-notes">
+                Add Comment:
+              </Label>
+              <textarea
+                name="notes"
+                id="disc-notes"
+                className={styles.contentInput}
+                placeholder="First distance driver I owned and really enjoyed throwing"
+                rows="10"
+                maxLength="500"
+                required
+                // onChange={e =>
+                //   this.updateField('description', e.target.value)}     
+                ></textarea>
+              </div>
             <div className={styles.uploadContainer}>
               <button
                 className={styles.uploadButton}
