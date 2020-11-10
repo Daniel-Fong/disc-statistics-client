@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { Input, Required, Label } from '../Form/Form';
 import DiscApiService from '../../services/disc-api-service';
 import cx from 'classnames';
-import styles from './AddDiscForm.scss';
+import styles from './AddDiscForm.module.scss';
 
 class AddDiscForm extends Component {
     state = {
@@ -62,19 +62,19 @@ class AddDiscForm extends Component {
   
     handleSubmit = e => {
       e.preventDefault();
-      const { name, brand, mold, type, plastic, stability, primaryColor, secondaryColor, speed, glide, turn, fade } = e.target;
+      const { name, brand, mold, type, plastic, stability, primaryColor, secondaryColor, speed, glide, turn, fade, notes } = e.target;
   
-      let img_src = '';
-      let img_alt = '';
+      // let img_src = '';
+      // let img_alt = '';
   
-      if (this.state.imgSrc) {
-        img_src = this.state.imgSrc;
-        img_alt = `${username.value} Profile Picture`;
-      } else if (!this.state.imgSrc) {
-        img_src =
-          'https://res.cloudinary.com/mmpr/image/upload/v1588908186/user_knxeok.png';
-        img_alt = 'Default Profile';
-      }
+      // if (this.state.imgSrc) {
+      //   img_src = this.state.imgSrc;
+      //   img_alt = `${username.value} Profile Picture`;
+      // } else if (!this.state.imgSrc) {
+      //   img_src =
+      //     'https://res.cloudinary.com/mmpr/image/upload/v1588908186/user_knxeok.png';
+      //   img_alt = 'Default Profile';
+      // }
   
       DiscApiService.addDisc({
         name: name.value,
@@ -89,8 +89,9 @@ class AddDiscForm extends Component {
         glide: glide.value,
         turn: turn.value,
         fade: fade.value,
-        img_src,
-        img_alt
+        notes: notes.value
+        // img_src,
+        // img_alt
       })
         .then(disc => {
           name.value = '';
@@ -122,7 +123,7 @@ class AddDiscForm extends Component {
           className={styles.addDiscForm}
           autoComplete="off">
           <div role="alert">{error ? <p>{error}</p> : null}</div>
-          <h2 className={styles.addDiscHeader}>Sign Up</h2>
+          <h2 className={styles.addDiscHeader}>Add Disc</h2>
           <div className={styles.inputContainer}>
             <div className={styles.addDiscDiv}>
               <Label
@@ -172,6 +173,7 @@ class AddDiscForm extends Component {
                 placeholder="Wraith"
                 className={styles.addDiscInput}
                 required
+                maxLength="20"
                 autoComplete="off"
               />
             </div>
@@ -188,7 +190,7 @@ class AddDiscForm extends Component {
                 className={styles.addDiscSelect}
               >
                 <option value='Putter' default>Putter</option>
-                <option value='Approach'>Approach</option>s
+                <option value='Approach'>Approach</option>
                 <option value='Midrange'>Midrange</option>
                 <option value='Fairway'>Fairway Driver</option>
                 <option value='Control'>Control Driver</option>
@@ -283,14 +285,6 @@ class AddDiscForm extends Component {
                 <option value='Grey'>Grey</option>
               </select>
             </div>
-            <div className={styles.uploadContainer}>
-              <button
-                className={styles.uploadButton}
-                onClick={e => this.beginUpload(e)}>
-                <span className={styles.uploadText}>Upload Disc Photo</span>
-              </button>
-              {this.displayPreview()}
-            </div>
             <div className={styles.addDiscDiv}>
               <Label
                 htmlFor="disc-speed-select"
@@ -303,7 +297,7 @@ class AddDiscForm extends Component {
                 name="speed"
                 className={styles.addDiscSelect}
               >
-                <option value='1' default>1</option>
+                <option value='1'>1</option>
                 <option value='2'>2</option>
                 <option value='3'>3</option>
                 <option value='4'>4</option>
@@ -331,7 +325,7 @@ class AddDiscForm extends Component {
                 name="glide"
                 className={styles.addDiscSelect}
               >
-                <option value='1' default>1</option>
+                <option value='1'>1</option>
                 <option value='2'>2</option>
                 <option value='3'>3</option>
                 <option value='4'>4</option>
@@ -352,7 +346,8 @@ class AddDiscForm extends Component {
                 name="turn"
                 className={styles.addDiscSelect}
               >
-                <option value='1' default>1</option>
+                <option value='1'>1</option>
+                <option value='0'>0</option>
                 <option value='-1'>-1</option>
                 <option value='-2'>-2</option>
                 <option value='-3'>-3</option>
@@ -372,7 +367,7 @@ class AddDiscForm extends Component {
                 name="fade"
                 className={styles.addDiscSelect}
               >
-                <option value='0' default>0</option>
+                <option value='0'>0</option>
                 <option value='1'>1</option>
                 <option value='2'>2</option>
                 <option value='3'>3</option>
@@ -390,22 +385,20 @@ class AddDiscForm extends Component {
                 name="notes"
                 id="disc-notes"
                 className={styles.contentInput}
-                placeholder="First distance driver I owned and really enjoyed throwing"
+                placeholder="First distance driver I owned and really enjoyed throwing. Fairly beat in."
                 rows="10"
                 maxLength="500"
-                required
-                // onChange={e =>
-                //   this.updateField('description', e.target.value)}     
+                required    
                 ></textarea>
               </div>
-            <div className={styles.uploadContainer}>
+            {/* <div className={styles.uploadContainer}>
               <button
                 className={styles.uploadButton}
                 onClick={e => this.beginUpload(e)}>
                 <span className={styles.uploadText}>Upload Disc Photo</span>
               </button>
               {this.displayPreview()}
-            </div>
+            </div> */}
           </div>
           <footer className="reg-footer">
             <button>
