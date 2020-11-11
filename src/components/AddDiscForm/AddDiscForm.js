@@ -225,7 +225,7 @@ class AddDiscForm extends Component {
                 name="stability"
                 className={styles.addDiscSelect}
               >
-                <option value='Stable'>Stable</option>
+                <option value='Stable' selected>Stable</option>
                 <option value='Over'>Overstable</option>
                 <option value='Under'>Understable</option>
                 <option value='VeryOver'>Very Overstable</option>
@@ -250,7 +250,7 @@ class AddDiscForm extends Component {
                 <option value='Green'>Green</option>
                 <option value='Teal'>Teal</option>
                 <option value='Blue'>Blue</option>
-                <option value='Purple'>Purple</option>
+                <option value='Purple' selected>Purple</option>
                 <option value='Pink'>Pink</option>
                 <option value='White'>White</option>
                 <option value='Black'>Black</option>
@@ -270,7 +270,7 @@ class AddDiscForm extends Component {
                 name="secondary_color"
                 className={styles.addDiscSelect}
               >
-                <option value='None' default>None</option>
+                <option value='None' selected>None</option>
                 <option value='Red'>Red</option>
                 <option value='Orange'>Orange</option>
                 <option value='Yellow'>Yellow</option>
@@ -297,13 +297,13 @@ class AddDiscForm extends Component {
                 name="speed"
                 className={styles.addDiscSelect}
               >
-                <option value='1'>1</option>
+                <option value='1' default>1</option>
                 <option value='2'>2</option>
                 <option value='3'>3</option>
                 <option value='4'>4</option>
                 <option value='5'>5</option>
                 <option value='6'>6</option>
-                <option value='7'>7</option>
+                <option value='7' selected>7</option>
                 <option value='8'>8</option>
                 <option value='9'>9</option>
                 <option value='10'>10</option>
@@ -329,7 +329,7 @@ class AddDiscForm extends Component {
                 <option value='2'>2</option>
                 <option value='3'>3</option>
                 <option value='4'>4</option>
-                <option value='5'>5</option>
+                <option value='5' selected>5</option>
                 <option value='6'>6</option>
                 <option value='7'>7</option>
               </select>
@@ -348,7 +348,7 @@ class AddDiscForm extends Component {
               >
                 <option value='1'>1</option>
                 <option value='0'>0</option>
-                <option value='-1'>-1</option>
+                <option value='-1' selected>-1</option>
                 <option value='-2'>-2</option>
                 <option value='-3'>-3</option>
                 <option value='-4'>-4</option>
@@ -370,7 +370,7 @@ class AddDiscForm extends Component {
                 <option value='0'>0</option>
                 <option value='1'>1</option>
                 <option value='2'>2</option>
-                <option value='3'>3</option>
+                <option value='3' selected>3</option>
                 <option value='4'>4</option>
                 <option value='5'>5</option>
               </select>
