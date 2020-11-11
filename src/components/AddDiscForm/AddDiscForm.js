@@ -62,7 +62,7 @@ class AddDiscForm extends Component {
   
     handleSubmit = e => {
       e.preventDefault();
-      const { name, brand, mold, type, plastic, stability, primaryColor, secondaryColor, speed, glide, turn, fade, notes } = e.target;
+      const { name, brand, mold, type, plastic, stability, primary_color, secondary_color, speed, glide, turn, fade, notes } = e.target;
   
       // let img_src = '';
       // let img_alt = '';
@@ -83,8 +83,8 @@ class AddDiscForm extends Component {
         type: type.value,
         plastic: plastic.value,
         stability: stability.value,
-        primaryColor: primaryColor.value,
-        secondaryColor: secondaryColor.value,
+        primary_color: primary_color.value,
+        secondary_color: secondary_color.value,
         speed: speed.value,
         glide: glide.value,
         turn: turn.value,
@@ -100,8 +100,8 @@ class AddDiscForm extends Component {
           type.value = '';
           plastic.value = '';
           stability.value = '';
-          primaryColor.value = '';
-          secondaryColor.value = '';
+          primary_color.value = '';
+          secondary_color.value = '';
           speed.value = '';
           glide.value = '';
           turn.value = '';
@@ -122,7 +122,7 @@ class AddDiscForm extends Component {
           }}
           className={styles.addDiscForm}
           autoComplete="off">
-          <div role="alert">{error ? <p>{error}</p> : null}</div>
+          <div role="alert">{error ? <p>{error.message}</p> : null}</div>
           <h2 className={styles.addDiscHeader}>Add Disc</h2>
           <div className={styles.inputContainer}>
             <div className={styles.addDiscDiv}>
@@ -241,7 +241,7 @@ class AddDiscForm extends Component {
               </Label>
               <select
                 id="disc-primaryColor-select"
-                name="primaryColor"
+                name="primary_color"
                 className={styles.addDiscSelect}
               >
                 <option value='Red'>Red</option>
@@ -267,7 +267,7 @@ class AddDiscForm extends Component {
               </Label>
               <select
                 id="disc-secondaryColor-select"
-                name="secondaryColor"
+                name="secondary_color"
                 className={styles.addDiscSelect}
               >
                 <option value='None' default>None</option>
@@ -387,8 +387,7 @@ class AddDiscForm extends Component {
                 className={styles.contentInput}
                 placeholder="First distance driver I owned and really enjoyed throwing. Fairly beat in."
                 rows="10"
-                maxLength="500"
-                required    
+                maxLength="500"   
                 ></textarea>
               </div>
             {/* <div className={styles.uploadContainer}>
