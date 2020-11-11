@@ -6,6 +6,7 @@ import PublicOnlyRoute from '../PublicOnlyRoute/PublicOnlyRoute';
 import RegistrationRoute from '../../routes/RegistrationRoute/RegistrationRoute';
 import AddDiscRoute from '../../routes/AddDiscRoute/AddDiscRoute';
 import LoginRoute from '../../routes/LoginRoute/LoginRoute';
+import DiscsRoute from '../../routes/DiscsRoute/DiscsRoute';
 
 export default class App extends Component {
   state = { hasError: false };
@@ -24,6 +25,7 @@ export default class App extends Component {
         <Switch>
           <PrivateRoute exact path={'/addDisc'} component={AddDiscRoute} /> 
           <PrivateRoute exact path={'/'} component={DashboardRoute} />
+          <PrivateRoute exact path={'/discs'} component={DiscsRoute} />
           <PublicOnlyRoute exact path={'/login'} component={LoginRoute} />
           <PublicOnlyRoute exact path={'/register'} component={RegistrationRoute} />
         </Switch>

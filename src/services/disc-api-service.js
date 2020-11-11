@@ -15,7 +15,19 @@ const DiscApiService = {
         }).then((res) =>
             !res.ok ? res.json().then((e) => Promise.reject(e)) : res.json()
         );
-    }
+    },
+
+    getUserDiscs() {
+        return fetch(`${config.API_ENDPOINT}/discs`, {
+            method: 'GET',
+            headers: {
+                Authorization: `Bearer ${TokenService.getAuthToken()}`,
+                'content-type': 'application/json',
+            },
+        }).then((res) =>
+            !res.ok ? res.json().then((e) => Promise.reject(e)) : res.json()
+        );
+    },
 }
 
 export default DiscApiService;

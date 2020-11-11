@@ -50,6 +50,9 @@ class Header extends Component {
           <Link className={styles.addDiscLink} to="/addDisc">
             Add Disc
           </Link>
+          <Link className={styles.discsLink} to="/discs">
+            Discs
+          </Link>
           <img
             className={styles.avatarImg}
             src={user.img_src}

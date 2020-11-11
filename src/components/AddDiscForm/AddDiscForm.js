@@ -400,8 +400,7 @@ class AddDiscForm extends Component {
             </div> */}
           </div>
           <footer className="reg-footer">
-            <button>
-              type="submit"
+            <button type="submit">
                 <span className="buttonText">Submit</span>
             </button>{' '}
           </footer>
