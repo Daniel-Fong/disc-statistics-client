@@ -12,7 +12,7 @@ const DiscsContext = React.createContext({
 
 export default DiscsContext;
 
-export class DiscsProvidor extends Component {
+export class DiscsProvider extends Component {
     state = {
         discs: [],
         filteredDiscs: [],
@@ -22,6 +22,7 @@ export class DiscsProvidor extends Component {
 
     setDiscs = discs => {
         this.setState({ discs });
+        console.log(this.state.discs)
     };
 
     setDiscId = discId => {
