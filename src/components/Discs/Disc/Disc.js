@@ -8,7 +8,7 @@ import React from 'react';
 export default class Disc extends React.Component {
     render() {
         const { disc } = this.props;
-
+        console.log(disc)
         return (
             <li>
                 <span>{disc.name}</span>
