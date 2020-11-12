@@ -11,8 +11,14 @@ export default class Disc extends React.Component {
         console.log(disc)
         return (
             <li>
-                <span>{disc.name}</span>
+                <h3>{disc.name}</h3>
+                <p>{disc.mold}</p>
+                <p>{disc.plastic}</p>
+                <p>{disc.type}</p>
                 <span>{disc.speed}</span>
+                <span>{disc.glide}</span>
+                <span>{disc.turn}</span>
+                <span>{disc.fade}</span>
             </li>
         )
     }

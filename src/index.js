@@ -4,7 +4,7 @@ import './index.css';
 import App from './components/App/App';
 import { BrowserRouter } from 'react-router-dom';
 import { UserProvider } from './contexts/UserContext';
-import { CloudinaryContext } from "cloudinary-react";
+// import { CloudinaryContext } from "cloudinary-react";
 import { DiscsProvider } from './contexts/DiscsContext';
 
 ReactDOM.render(

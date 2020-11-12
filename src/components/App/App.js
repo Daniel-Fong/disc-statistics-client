@@ -7,6 +7,7 @@ import RegistrationRoute from '../../routes/RegistrationRoute/RegistrationRoute'
 import AddDiscRoute from '../../routes/AddDiscRoute/AddDiscRoute';
 import LoginRoute from '../../routes/LoginRoute/LoginRoute';
 import DiscsRoute from '../../routes/DiscsRoute/DiscsRoute';
+import { DiscViewRoute } from '../../routes/DiscViewRoute/DiscViewRoute';
 
 export default class App extends Component {
   state = { hasError: false };
@@ -26,6 +27,7 @@ export default class App extends Component {
           <PrivateRoute exact path={'/addDisc'} component={AddDiscRoute} /> 
           <PrivateRoute exact path={'/'} component={DashboardRoute} />
           <PrivateRoute exact path={'/discs'} component={DiscsRoute} />
+          <PrivateRoute exact path={'/discs/:id'} component={DiscViewRoute} />
           <PublicOnlyRoute exact path={'/login'} component={LoginRoute} />
           <PublicOnlyRoute exact path={'/register'} component={RegistrationRoute} />
         </Switch>
