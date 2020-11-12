@@ -14,13 +14,11 @@ export class DiscsRoute extends Component {
 
     async getDiscs() {
         const discs = await DiscApiService.getUserDiscs();
-        console.log(discs)
         await this.context.setDiscs(discs);
     }
 
     render() {
         let discs = this.context.discs;
-        console.log(discs)
         return (
             <div>
                 <Header/>

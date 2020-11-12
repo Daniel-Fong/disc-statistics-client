@@ -22,7 +22,6 @@ export class DiscsProvider extends Component {
 
     setDiscs = discs => {
         this.setState({ discs });
-        console.log(this.state.discs)
     };
 
     setDiscId = discId => {
