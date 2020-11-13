@@ -6,7 +6,6 @@ import Disc from './Disc/Disc'
 export default class Discs extends Component {
     render() {
         const { discs } = this.props;
-        console.log(discs)
         return (
             <div>
                 <ul>
