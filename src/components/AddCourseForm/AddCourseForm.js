@@ -10,7 +10,7 @@ class AddCourseForm extends Component {
       error: null,
       imgSrc: null,
       type: 'Putter',
-      stability: 'Stable',
+      holes: 'Stable',
       primary_color: 'Red',
       secondary_color: 'None',
       speed: '7',
@@ -70,7 +70,7 @@ class AddCourseForm extends Component {
   
     handleSubmit = e => {
       e.preventDefault();
-      const { name, brand, mold, type, plastic, stability, primary_color, secondary_color, speed, glide, turn, fade, notes } = e.target;
+      const { name, brand, mold, type, plastic, holes, primary_color, secondary_color, speed, glide, turn, fade, notes } = e.target;
   
       // let img_src = '';
       // let img_alt = '';
@@ -90,7 +90,7 @@ class AddCourseForm extends Component {
         mold: mold.value,
         type: type.value,
         plastic: plastic.value,
-        stability: stability.value,
+        holes: holes.value,
         primary_color: primary_color.value,
         secondary_color: secondary_color.value,
         speed: speed.value,
@@ -107,7 +107,7 @@ class AddCourseForm extends Component {
           mold.value = '';
           type.value = '';
           plastic.value = '';
-          stability.value = '';
+          holes.value = '';
           primary_color.value = '';
           secondary_color.value = '';
           speed.value = '';
@@ -148,7 +148,7 @@ class AddCourseForm extends Component {
                 ref={this.firstInput}
                 id="course-name-input"
                 name="name"
-                placeholder="Beat in Star Wraith"
+                placeholder="DeLaveaga Park"
                 className={styles.addCourseInput}
                 required
                 maxLength="30"
@@ -157,15 +157,15 @@ class AddCourseForm extends Component {
             </div>
             <div className={styles.addCourseDiv}>
               <Label
-                htmlFor="course-brand-input"
+                htmlFor="course-designer-input"
                 className={styles.addCourseLabel}>
-                <span className={styles.fullInputPhrase}>Enter Course</span> brand:
+                <span className={styles.fullInputPhrase}>Enter Course</span> designer:
                 <Required />
               </Label>
               <Input
-                id="course-brand-input"
-                name="brand"
-                placeholder="Innova"
+                id="course-designer-input"
+                name="designer"
+                placeholder="Tom Schot"
                 className={styles.addCourseInput}
                 required
                 maxLength="20"
@@ -174,52 +174,50 @@ class AddCourseForm extends Component {
             </div>
             <div className={styles.addCourseDiv}>
               <Label
-                htmlFor="course-mold-input"
+                htmlFor="course-terrain-input"
                 className={styles.addCourseLabel}>
-                <span className={styles.fullInputPhrase}>Enter Course</span> mold:
+                <span className={styles.fullInputPhrase}>Enter Course</span> terrain:
                 <Required />
               </Label>
               <Input
-                id="course-mold-input"
-                name="mold"
-                placeholder="Wraith"
+                id="course-terrain-input"
+                name="terrain"
+                placeholder="Very Hilly and Moderately Wooded"
                 className={styles.addCourseInput}
                 required
-                maxLength="20"
+                maxLength="30"
                 autoComplete="off"
               />
             </div>
             <div className={styles.addCourseDiv}>
               <Label
-                htmlFor="course-type-select"
+                htmlFor="course-tees-select"
                 className={styles.addCourseLabel}>
-                <span className={styles.fullInputPhrase}>Select Course</span> type:
+                <span className={styles.fullInputPhrase}>Select Course</span> tee type:
                 <Required />
               </Label>
               <select
-                id="course-type-select"
-                name="type"
+                id="course-tees-select"
+                name="tees"
                 className={styles.addCourseSelect}
               >
-                <option value='Putter'>Putter</option>
-                <option value='Approach'>Approach</option>
-                <option value='Midrange'>Midrange</option>
-                <option value='Fairway'>Fairway Driver</option>
-                <option value='Control'>Control Driver</option>
-                <option value='Distance'>Distance Driver</option>
+                <option value='Concrete'>Concrete</option>
+                <option value='Turf'>Turf</option>
+                <option value='Dirt'>Dirt</option>
+                <option value='Mixed'>Mixed</option>
               </select>
             </div>
             <div className={styles.addCourseDiv}>
               <Label
-                htmlFor="course-plastic-input"
+                htmlFor="course-baskets-input"
                 className={styles.addCourseLabel}>
-                <span className={styles.fullInputPhrase}>Enter Course</span> plastic:
+                <span className={styles.fullInputPhrase}>Enter Course</span> baskets:
                 <Required />
               </Label>
               <Input
-                id="course-plastic-input"
-                name="plastic"
-                placeholder="Star"
+                id="course-baskets-input"
+                name="baskets"
+                placeholder="Mach X"
                 className={styles.addCourseInput}
                 required
                 autoComplete="off"
@@ -227,14 +225,14 @@ class AddCourseForm extends Component {
             </div>
             <div className={styles.addCourseDiv}>
               <Label
-                htmlFor="course-stability-select"
+                htmlFor="course-holes-select"
                 className={styles.addCourseLabel}>
-                <span className={styles.fullInputPhrase}>Select Course</span> stability:
+                <span className={styles.fullInputPhrase}>Select Course</span> holes:
                 <Required />
               </Label>
               <select
-                id="course-stability-select"
-                name="stability"
+                id="course-holes-select"
+                name="holes"
                 className={styles.addCourseSelect}
               >
                 <option value='Stable'>Stable</option>
@@ -268,125 +266,6 @@ class AddCourseForm extends Component {
                 <option value='Black'>Black</option>
                 <option value='Brown'>Brown</option>
                 <option value='Grey'>Grey</option>
-              </select>
-            </div>
-            <div className={styles.addCourseDiv}>
-              <Label
-                htmlFor="course-secondaryColor-select"
-                className={styles.addCourseLabel}>
-                <span className={styles.fullInputPhrase}>Select Course</span> secondary color:
-                <Required />
-              </Label>
-              <select
-                id="course-secondaryColor-select"
-                name="secondary_color"
-                className={styles.addCourseSelect}
-              >
-                <option value='None'>None</option>
-                <option value='Red'>Red</option>
-                <option value='Orange'>Orange</option>
-                <option value='Yellow'>Yellow</option>
-                <option value='Green'>Green</option>
-                <option value='Teal'>Teal</option>
-                <option value='Blue'>Blue</option>
-                <option value='Purple'>Purple</option>
-                <option value='Pink'>Pink</option>
-                <option value='White'>White</option>
-                <option value='Black'>Black</option>
-                <option value='Brown'>Brown</option>
-                <option value='Grey'>Grey</option>
-              </select>
-            </div>
-            <div className={styles.addCourseDiv}>
-              <Label
-                htmlFor="course-speed-select"
-                className={styles.addCourseLabel}>
-                <span className={styles.fullInputPhrase}>Select Course</span> speed:
-                <Required />
-              </Label>
-              <select
-                id="course-speed-select"
-                name="speed"
-                className={styles.addCourseSelect}
-                value={this.state.speed}
-                onChange={this.handleSpeedChange}
-              >
-                <option value='1'>1</option>
-                <option value='2'>2</option>
-                <option value='3'>3</option>
-                <option value='4'>4</option>
-                <option value='5'>5</option>
-                <option value='6'>6</option>
-                <option value='7'>7</option>
-                <option value='8'>8</option>
-                <option value='9'>9</option>
-                <option value='10'>10</option>
-                <option value='11'>11</option>
-                <option value='12'>12</option>
-                <option value='13'>13</option>
-                <option value='14'>14</option>
-              </select>
-            </div>
-            <div className={styles.addCourseDiv}>
-              <Label
-                htmlFor="course-glide-select"
-                className={styles.addCourseLabel}>
-                <span className={styles.fullInputPhrase}>Select Course</span> glide:
-                <Required />
-              </Label>
-              <select
-                id="course-glide-select"
-                name="glide"
-                className={styles.addCourseSelect}
-              >
-                <option value='1'>1</option>
-                <option value='2'>2</option>
-                <option value='3'>3</option>
-                <option value='4'>4</option>
-                <option value='5'>5</option>
-                <option value='6'>6</option>
-                <option value='7'>7</option>
-              </select>
-            </div>
-            <div className={styles.addCourseDiv}>
-              <Label
-                htmlFor="course-turn-select"
-                className={styles.addCourseLabel}>
-                <span className={styles.fullInputPhrase}>Select Course</span> turn:
-                <Required />
-              </Label>
-              <select
-                id="course-turn-select"
-                name="turn"
-                className={styles.addCourseSelect}
-              >
-                <option value='1'>1</option>
-                <option value='0'>0</option>
-                <option value='-1'>-1</option>
-                <option value='-2'>-2</option>
-                <option value='-3'>-3</option>
-                <option value='-4'>-4</option>
-                <option value='-5'>-5</option>
-              </select>
-            </div>
-            <div className={styles.addCourseDiv}>
-              <Label
-                htmlFor="course-fade-select"
-                className={styles.addCourseLabel}>
-                <span className={styles.fullInputPhrase}>Select Course</span> fade:
-                <Required />
-              </Label>
-              <select
-                id="course-fade-select"
-                name="fade"
-                className={styles.addCourseSelect}
-              >
-                <option value='0'>0</option>
-                <option value='1'>1</option>
-                <option value='2'>2</option>
-                <option value='3'>3</option>
-                <option value='4'>4</option>
-                <option value='5'>5</option>
               </select>
             </div>
             <div className={styles.addCourseDiv}>
