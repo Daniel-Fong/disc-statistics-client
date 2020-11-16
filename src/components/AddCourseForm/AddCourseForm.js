@@ -70,7 +70,7 @@ class AddCourseForm extends Component {
   
     handleSubmit = e => {
       e.preventDefault();
-      const { name, brand, mold, type, plastic, holes, primary_color, secondary_color, speed, glide, turn, fade, notes } = e.target;
+      const { name, designer, terrain, tees, baskets, holes, latitude, longitude, zip, description } = e.target;
   
       // let img_src = '';
       // let img_alt = '';
@@ -86,34 +86,29 @@ class AddCourseForm extends Component {
   
       CourseApiService.addCourse({
         name: name.value,
-        brand: brand.value,
-        mold: mold.value,
-        type: type.value,
-        plastic: plastic.value,
+        designer: designer.value,
+        terrain: terrain.value,
+        tees: tees.value,
+        baskets: baskets.value,
         holes: holes.value,
-        primary_color: primary_color.value,
-        secondary_color: secondary_color.value,
-        speed: speed.value,
-        glide: glide.value,
-        turn: turn.value,
-        fade: fade.value,
-        notes: notes.value
+        latitude: latitude.value,
+        longitude: longitude.value,
+        zip: zip.value,
+        description: description.value
         // img_src,
         // img_alt
       })
         .then(Course => {
           name.value = '';
-          brand.value = '';
-          mold.value = '';
-          type.value = '';
-          plastic.value = '';
+          designer.value = '';
+          terrain.value = '';
+          tees.value = '';
+          baskets.value = '';
           holes.value = '';
-          primary_color.value = '';
-          secondary_color.value = '';
-          speed.value = '';
-          glide.value = '';
-          turn.value = '';
-          fade.value = '';
+          latitude.value = '';
+          longitude.value = '';
+          zip.value = '';
+          description.value = '';
         })
         .catch(res => {
           this.setState({ error: res.error });
