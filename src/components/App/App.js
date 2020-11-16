@@ -8,6 +8,7 @@ import AddDiscRoute from '../../routes/AddDiscRoute/AddDiscRoute';
 import LoginRoute from '../../routes/LoginRoute/LoginRoute';
 import DiscsRoute from '../../routes/DiscsRoute/DiscsRoute';
 import { DiscViewRoute } from '../../routes/DiscViewRoute/DiscViewRoute';
+import AddCourseRoute from '../../routes/AddCourseRoute/AddCourseRoute';
 
 export default class App extends Component {
   state = { hasError: false };
@@ -25,6 +26,7 @@ export default class App extends Component {
         {hasError && <p>There was an error! Oh no!</p>}
         <Switch>
           <PrivateRoute exact path={'/addDisc'} component={AddDiscRoute} /> 
+          <PrivateRoute exact path={'/addCourse'} component={AddCourseRoute} /> 
           <PrivateRoute exact path={'/'} component={DashboardRoute} />
           <PrivateRoute exact path={'/discs'} component={DiscsRoute} />
           <PrivateRoute exact path={'/discs/:id'} component={DiscViewRoute} />
