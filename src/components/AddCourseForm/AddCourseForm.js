@@ -141,7 +141,7 @@ class AddCourseForm extends Component {
               <Label
                 htmlFor="course-name-input"
                 className={styles.addCourseLabel}>
-                <span className={styles.fullInputPhrase}>Enter Course</span> name:
+                <span className={styles.fullInputPhrase}>Enter course</span> name:
                 <Required />
               </Label>
               <Input
@@ -159,7 +159,7 @@ class AddCourseForm extends Component {
               <Label
                 htmlFor="course-designer-input"
                 className={styles.addCourseLabel}>
-                <span className={styles.fullInputPhrase}>Enter Course</span> designer:
+                <span className={styles.fullInputPhrase}>Enter course</span> designer:
                 <Required />
               </Label>
               <Input
@@ -176,7 +176,7 @@ class AddCourseForm extends Component {
               <Label
                 htmlFor="course-terrain-input"
                 className={styles.addCourseLabel}>
-                <span className={styles.fullInputPhrase}>Enter Course</span> terrain:
+                <span className={styles.fullInputPhrase}>Enter course</span> terrain:
                 <Required />
               </Label>
               <Input
@@ -193,7 +193,7 @@ class AddCourseForm extends Component {
               <Label
                 htmlFor="course-tees-select"
                 className={styles.addCourseLabel}>
-                <span className={styles.fullInputPhrase}>Select Course</span> tee type:
+                <span className={styles.fullInputPhrase}>Select course</span> tee type:
                 <Required />
               </Label>
               <select
@@ -211,7 +211,7 @@ class AddCourseForm extends Component {
               <Label
                 htmlFor="course-baskets-input"
                 className={styles.addCourseLabel}>
-                <span className={styles.fullInputPhrase}>Enter Course</span> baskets:
+                <span className={styles.fullInputPhrase}>Enter course</span> baskets:
                 <Required />
               </Label>
               <Input
@@ -225,60 +225,79 @@ class AddCourseForm extends Component {
             </div>
             <div className={styles.addCourseDiv}>
               <Label
-                htmlFor="course-holes-select"
+                htmlFor="course-holes-input"
                 className={styles.addCourseLabel}>
-                <span className={styles.fullInputPhrase}>Select Course</span> holes:
+                <span className={styles.fullInputPhrase}>Enter number of</span> holes on course:
                 <Required />
               </Label>
-              <select
-                id="course-holes-select"
+              <Input
+                id="course-holes-input"
                 name="holes"
-                className={styles.addCourseSelect}
-              >
-                <option value='Stable'>Stable</option>
-                <option value='Over'>Overstable</option>
-                <option value='Under'>Understable</option>
-                <option value='VeryOver'>Very Overstable</option>
-                <option value='VeryUnder'>Very Understable</option>
-              </select>
+                placeholder="29"
+                className={styles.addCourseInput}
+                required
+                autoComplete="off"
+              />
             </div>
             <div className={styles.addCourseDiv}>
               <Label
-                htmlFor="course-primaryColor-select"
+                htmlFor="course-latitude-input"
                 className={styles.addCourseLabel}>
-                <span className={styles.fullInputPhrase}>Select Course</span> primary color:
+                <span className={styles.fullInputPhrase}>Enter course</span> latitude:
                 <Required />
               </Label>
-              <select
-                id="course-primaryColor-select"
-                name="primary_color"
-                className={styles.addCourseSelect}
-              >
-                <option value='Red'>Red</option>
-                <option value='Orange'>Orange</option>
-                <option value='Yellow'>Yellow</option>
-                <option value='Green'>Green</option>
-                <option value='Teal'>Teal</option>
-                <option value='Blue'>Blue</option>
-                <option value='Purple' >Purple</option>
-                <option value='Pink'>Pink</option>
-                <option value='White'>White</option>
-                <option value='Black'>Black</option>
-                <option value='Brown'>Brown</option>
-                <option value='Grey'>Grey</option>
-              </select>
+              <Input
+                id="course-latitude-input"
+                name="latitude"
+                placeholder="37.005329"
+                className={styles.addCourseInput}
+                required
+                autoComplete="off"
+              />
+            </div>
+            <div className={styles.addCourseDiv}>
+              <Label
+                htmlFor="course-longitude-input"
+                className={styles.addCourseLabel}>
+                <span className={styles.fullInputPhrase}>Enter course</span> longitude:
+                <Required />
+              </Label>
+              <Input
+                id="course-longitude-input"
+                name="longitude"
+                placeholder="-121.995910"
+                className={styles.addCourseInput}
+                required
+                autoComplete="off"
+              />
+            </div>
+            <div className={styles.addCourseDiv}>
+              <Label
+                htmlFor="course-zip-input"
+                className={styles.addCourseLabel}>
+                <span className={styles.fullInputPhrase}>Enter course</span> zip code:
+                <Required />
+              </Label>
+              <Input
+                id="course-zip-input"
+                name="zip"
+                placeholder="95060"
+                className={styles.addCourseInput}
+                required
+                autoComplete="off"
+              />
             </div>
             <div className={styles.addCourseDiv}>
               <Label
                 className={styles.addCommentLabel}
-                htmlFor="course-notes">
+                htmlFor="course-description">
                 Add Comment:
               </Label>
               <textarea
-                name="notes"
-                id="course-notes"
+                name="description"
+                id="course-description"
                 className={styles.contentInput}
-                placeholder="First distance driver I owned and really enjoyed throwing. Fairly beat in."
+                placeholder="One of the most highly rated courses in the world. It is challenging and unforgiving, as errant throws can lead to discs being lost in walls of poison oak. Maintained by the De Laveaga Disc Golf Club formed in 1986."
                 rows="10"
                 maxLength="500"   
                 ></textarea>
